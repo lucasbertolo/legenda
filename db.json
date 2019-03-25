@@ -1,0 +1,140 @@
+{
+  "cores": [
+    {
+      "colorList": [
+        {
+          "cor": "black",
+          "id": "color0"
+        },
+        {
+          "cor": "#fff",
+          "id": "color1"
+        }
+      ],
+      "gradient": "\n\t\t\tlinear-gradient(to right,\n\t\t\tblack,#fff\n\t\t\t)\n\t\t",
+      "id": "black"
+    },
+    {
+      "colorList": [
+        {
+          "cor": "green",
+          "id": "color0"
+        },
+        {
+          "cor": "orange",
+          "id": "color1"
+        }
+      ],
+      "gradient": "\n\t\t\tlinear-gradient(to right,\n\t\t\tgreen,orange\n\t\t\t)\n\t\t",
+      "id": "greenafds"
+    },
+    {
+      "colorList": [
+        {
+          "cor": "green",
+          "id": "color0"
+        },
+        {
+          "cor": "blue",
+          "id": "color1"
+        }
+      ],
+      "gradient": "\n\t\t\tlinear-gradient(to right,\n\t\t\tgreen,blue\n\t\t\t)\n\t\t",
+      "id": "grasddsf"
+    },
+    {
+      "colorList": [
+        {
+          "cor": "orange",
+          "id": "color0"
+        },
+        {
+          "cor": "black",
+          "id": "color1"
+        },
+        {
+          "cor": "red",
+          "id": "color2"
+        }
+      ],
+      "gradient": "\n\t\t\tlinear-gradient(to right,\n\t\t\torange,black,red\n\t\t\t)\n\t\t",
+      "id": "orangina"
+    },
+    {
+      "colorList": [
+        {
+          "cor": "red",
+          "id": "color0"
+        },
+        {
+          "cor": "#fff",
+          "id": "color1"
+        }
+      ],
+      "gradient": "\n\t\t\tlinear-gradient(to right,\n\t\t\tred,#fff\n\t\t\t)\n\t\t",
+      "id": "fdsafddfs"
+    },
+    {
+      "colorList": [
+        {
+          "cor": "Red",
+          "id": "color0"
+        },
+        {
+          "cor": "Green",
+          "id": "color2"
+        },
+        {
+          "cor": "#fff",
+          "id": "color3"
+        },
+        {
+          "cor": "#fff",
+          "id": "color4"
+        },
+        {
+          "cor": "#fff",
+          "id": "color5"
+        },
+        {
+          "cor": "#fff",
+          "id": "color6"
+        },
+        {
+          "cor": "#fff",
+          "id": "color7"
+        }
+      ],
+      "gradient": "\n\t\t\tlinear-gradient(to right,\n\t\t\tRed,Green,#fff,#fff,#fff,#fff,#fff\n\t\t\t)\n\t\t",
+      "id": "Red"
+    },
+    {
+      "colorList": [
+        {
+          "cor": "#a1f76b",
+          "id": "color0"
+        },
+        {
+          "cor": "#ffef29",
+          "id": "color1"
+        }
+      ],
+      "gradient": "\n\t\t\tlinear-gradient(to right,\n\t\t\t#a1f76b,#ffef29\n\t\t\t)\n\t\t",
+      "id": "adsffsdsdfdfs"
+    },
+    {
+      "colorList": [
+        {
+          "cor": "red",
+          "id": "color0"
+        },
+        {
+          "cor": "white",
+          "id": "color1"
+        }
+      ],
+      "gradient": "\n\t\t\tlinear-gradient(to right,\n\t\t\tred,white\n\t\t\t)\n\t\t",
+      "id": "opsssasd"
+    }
+  ]
+}
