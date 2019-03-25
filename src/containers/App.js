@@ -13,7 +13,7 @@ const initialState = {
 		message: '',
 		container: true,
 		mode: 'post',
-		url: 'http://localhost:4000/cores',
+		url: 'https://lbjsondb.herokuapp.com/cores',
 }
 
 class App extends Component {
@@ -24,7 +24,7 @@ class App extends Component {
 	
 	//Busca as cores cadastradas para fazer a lista
 	fetchData = () =>{
-		fetch('http://localhost:4000/cores')
+		fetch('https://lbjsondb.herokuapp.com/cores')
 			.then(resp => resp.json())
 			.then(array => {
 				this.setState({
@@ -66,7 +66,7 @@ class App extends Component {
 	    const name = e.target.id;
 		const {data} = this.state;
 			if (window.confirm("Deseja deletar a cor?")) {
-  				fetch(`http://localhost:4000/cores/${name}`, {
+  				fetch(`https://lbjsondb.herokuapp.com/cores/${name}`, {
 		          method: 'delete',
 		          headers: {'Content-Type': 'application/json'}		 
 	       		 })    
@@ -109,7 +109,7 @@ class App extends Component {
 			gradient: data[index].gradient,
 			container: false,
 			mode: 'put',
-			url: 'http://localhost:4000/cores/' + name
+			url: 'https://lbjsondb.herokuapp.com/cores/' + name
 		})
 	}
 	//atualiza lista de cores
