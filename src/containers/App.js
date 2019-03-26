@@ -13,7 +13,7 @@ const initialState = {
 		message: '',
 		container: true,
 		mode: 'post',
-		url: 'https://lbjsondb.herokuapp.com/cores',
+		url: 'http://localhost:4000/cores',
 }
 
 class App extends Component {
@@ -24,7 +24,9 @@ class App extends Component {
 	
 	//Busca as cores cadastradas para fazer a lista
 	fetchData = () =>{
-		fetch('https://lbjsondb.herokuapp.com/cores')
+		const {url} = this.state;
+
+		fetch(url)
 			.then(resp => resp.json())
 			.then(array => {
 				this.setState({
@@ -51,30 +53,30 @@ class App extends Component {
 	        })        
 	          .catch(err => {
 	            this.setState({message: 'ops, algo deu errado'});
-	          });
+	          })
+	          .finally(()=>{this.fetchData()});
+
 	           this.setState({
 	           	container: true,
 				url: initialState.url
 	           }) ; 
 
-	           window.setTimeout(() =>{ this.fetchData() }, 1000);	
+	           
       }
     }
 
     //deleta cor no db.jsom
     deleteColor = (e) => {
 	    const name = e.target.id;
-		const {data} = this.state;
 			if (window.confirm("Deseja deletar a cor?")) {
-  				fetch(`https://lbjsondb.herokuapp.com/cores/${name}`, {
+  				fetch(`http://localhost:4000/cores/${name}`, {
 		          method: 'delete',
 		          headers: {'Content-Type': 'application/json'}		 
 	       		 })    
 	          		.catch(err => {
 	            		console.log('ops, algo deu errado');
-	          		});
-
-	         window.setTimeout(() =>{ this.fetchData() }, 1000);
+	          		})
+	          		.finally(()=>{this.fetchData()});	         
 
 			} else {
 			  
@@ -84,8 +86,11 @@ class App extends Component {
 
     //abre janela de cadastro de cor em branco
 	addColor = () =>{
+		//spread nao funciona por ser deep object 
+		let clone = JSON.parse(JSON.stringify(initialState)); 
+
 		this.setState({
-			colorList: initialState.colorList,
+			colorList: clone.colorList,
 			name: initialState.name,
 			gradient: initialState.gradient,
 			message: initialState.message,
@@ -100,8 +105,8 @@ class App extends Component {
 	//abre janela de cor com dados anteriores
 	editColor = (e) => {
 		const name = e.target.id;
-		const {data} = this.state;
-		const index = data.findIndex(x => x.id === name);
+		const {data, url} = this.state;
+		const index = data.findIndex(x => x.id === name);		
 
 		this.setState({
 			colorList: data[index].colorList,
@@ -109,8 +114,9 @@ class App extends Component {
 			gradient: data[index].gradient,
 			container: false,
 			mode: 'put',
-			url: 'https://lbjsondb.herokuapp.com/cores/' + name
+			url: `${url}/${name}`
 		})
+
 	}
 	//atualiza lista de cores
 	handleColorList = (cl) => {
@@ -129,7 +135,11 @@ class App extends Component {
 
 	//atualiza nome da cor
 	handleName = (e) => {
-		this.setState({name: e.target.value});
+		if(this.state.mode === 'put'){
+			this.setState({name: this.state.name})
+		} else{
+			this.setState({name: e.target.value});
+		}
 	}
 
 	//reabre container com a lista
