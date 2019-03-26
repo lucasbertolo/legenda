@@ -4,9 +4,7 @@ import Gradient from '../../components/Gradient';
 import Buttons from '../../components/Buttons';
 
 class Cadastro extends Component{
-	constructor(props){
-		super(props);
-	}
+
 
 	//Inicia o gradiente com o state inicial
 	componentDidMount(){
